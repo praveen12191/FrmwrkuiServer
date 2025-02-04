@@ -18,11 +18,12 @@ origins = [
     "http://localhost",
     "http://localhost:3000",
     "http://localhost:8080",
+    "https://frmwrkuiweb.onrender.com"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],  # Use "*" for testing, replace with `origins` for security
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
