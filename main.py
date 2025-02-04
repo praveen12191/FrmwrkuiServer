@@ -31,6 +31,18 @@ app.add_middleware(
 
 columnValue = []
 
+@app.options("/{full_path:path}")
+async def preflight(full_path: str):
+    return JSONResponse(
+        content={"message": "CORS preflight OK"},
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Credentials": "true",
+        }
+    )
+
 @app.middleware("http")
 async def add_cors_headers(request, call_next):
     response = await call_next(request)
