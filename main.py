@@ -11,7 +11,7 @@ load_dotenv()
 
 
 app = FastAPI()
-connection_string = "Driver={ODBC Driver 17 for SQL Server};Server=CRSDWSQLDEV02\\SDW_QA;Database=STG_SRVC_WH;Trusted_Connection=yes"
+connection_string = os.getenv("CONNECTION_STRING")
 
 origins = [
     "http://localhost",
