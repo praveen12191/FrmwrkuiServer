@@ -11,7 +11,7 @@ load_dotenv()
 
 
 app = FastAPI()
-connection_string = "Driver={SQL Server};Server=CRSDWSQLDEV02\SDW_QA;Database=STG_SRVC_WH;Trusted_Connection=yes"
+connection_string = "Driver={SQL Server};Server=CRSDWSQLDEV02\\SDW_QA;Database=STG_SRVC_WH;Trusted_Connection=yes"
 
 
 origins = [
